@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include "Book.h"
+#include <fstream>
 using namespace std;
 //Testing update
 void showMenu();
@@ -12,12 +13,66 @@ void sortBooks();
 void addNewBooks();
 void clearScreen();
 
+
+
 Book arrayBook[100];
 int totalBooks = 0;
+void saveBooks() {
+    ofstream file("books.txt");
+    if (!file) {
+        cout << "Error opening books.txt for writing.\n";
+        return;
+    }
+
+    for (int i = 0; i < totalBooks; i++) {
+        file << arrayBook[i].title << "|"
+             << arrayBook[i].isbn << "|"
+             << arrayBook[i].author << "|"
+             << arrayBook[i].available << "\n";
+    }
+
+    file.close();
+    cout << "Books saved successfully!\n";
+}
+
+void loadBooks() {
+    ifstream file("books.txt");
+    if (!file) {
+        cout << "books.txt not found, starting with empty library.\n";
+        return;
+    }
+
+    string title, isbn, author, availableStr;
+
+    while (getline(file, title, '|') &&
+           getline(file, isbn, '|') &&
+           getline(file, author, '|') &&
+           getline(file, availableStr)) 
+    {
+        Book b;
+        b.title = title;
+        b.isbn = isbn;
+        b.author = author;
+        b.available = (availableStr == "1");
+
+        arrayBook[totalBooks] = b;
+        totalBooks++;
+    }
+
+    file.close();
+    cout << totalBooks << " books loaded from file.\n";
+}
+
+
+
+
 
 int main()
 {
-    cout << boolalpha; // displays true instead of 1 and false instead of 0 for boolean values
+    cout << boolalpha; 
+    loadBooks();
+
+    // displays true instead of 1 and false instead of 0 for boolean values
    /* Book book1;
     book1.setBookDetails("Twilight", "AAAAA", "Alex", true);
     Book book2;
@@ -115,6 +170,7 @@ void borrowBooks() {
             if (arrayBook[i].isbn == isbnToBorrow) {
                 found = true;
                 if (arrayBook[i].borrowBook()) {
+                    saveBooks();
                     cout << "==> You have borrowed the book: " << arrayBook[i].title << endl;
                     cout << "==> Don't forget to return the book: " << arrayBook[i].title << endl;
                     break;
@@ -147,6 +203,8 @@ void returnBooks() {
         if (arrayBook[i].isbn == isbnToReturn) {
             found = true;
             arrayBook[i].returnBook();
+            saveBooks();
+
             cout << "==> You have returned the book: " << arrayBook[i].title << endl;
         }
     }
@@ -221,6 +279,7 @@ void addNewBooks() {
         arrayBook[totalBooks] = book;
         cout << "Book: " << book.title << " added."<<endl;
         totalBooks++; // increment the book index
+        saveBooks();
         cout << "Would you like to add another book (Y/N) ? ";
         cin >> answer;
         if (answer == 'N' or answer == 'n'){
