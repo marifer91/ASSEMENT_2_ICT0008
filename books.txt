@@ -8,3 +8,4 @@ The Alchemist|9780061122415|Paulo Coelho|1
 The Brothers Karamazov|9780374528379|Fyodor Dostoevsky|1
 Moby-Dick|9781503280786|Herman Melville|1
 Pride and Prejudice|9780141439518|Jane Austen|0
+The Hobbit|9780547928227|J.R.R. Tolkien|1
