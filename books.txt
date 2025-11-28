@@ -1,11 +1,11 @@
-The Lord of the Rings: The Fellowship of the Ring|9780544003415|J.R.R. Tolkien|1
-Crime and Punishment|9780486454115|Fyodor Dostoevsky|1
-Wuthering Heights|9780141439556|Emily Brontë|1
-The Odyssey|9780140268867|Homer|1
-Dracula|9780451526342|Bram Stoker|1
-The Picture of Dorian Gray|9780141439570|Oscar Wilde|1
-The Alchemist|9780061122415|Paulo Coelho|1
-The Brothers Karamazov|9780374528379|Fyodor Dostoevsky|1
-Moby-Dick|9781503280786|Herman Melville|1
-Pride and Prejudice|9780141439518|Jane Austen|0
-The Hobbit|9780547928227|J.R.R. Tolkien|1
+isbn: 9780544003415, title: The Lord of the Rings: The Fellowship of the Ring, author: J.R.R. Tolkien, available: true
+isbn: 9780486454115, title: Crime and Punishment, author: Fyodor Dostoevsky, available: true
+isbn: 9780141439556, title: Wuthering Heights, author: Emily Brontë, available: true
+isbn: 9780140268867, title: The Odyssey, author: Homer, available: true
+isbn: 9780451526342, title: Dracula, author: Bram Stoker, available: true
+isbn: 9780141439570, title: The Picture of Dorian Gray, author: Oscar Wilde, available: true
+isbn: 9780061122415, title: The Alchemist, author: Paulo Coelho, available: true
+isbn: 9780374528379, title: The Brothers Karamazov, author: Fyodor Dostoevsky, available: true
+isbn: 9781503280786, title: Moby-Dick, author: Herman Melville, available: true
+isbn: 9780141439518, title: Pride and Prejudice, author: Jane Austen, available: false
+isbn: 9780547928227, title: The Hobbit, author: J.R.R. Tolkien, available: true
